@@ -10,12 +10,16 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: "/s3",
+      name: "s3",
+      component: () => import('../views/S3View.vue'),
+      children: [
+        {
+          path: "upload",
+          // name: "s3upload",
+          component: () => import('../components/S3Upload.vue'),
+        }
+      ]
     }
   ]
 })

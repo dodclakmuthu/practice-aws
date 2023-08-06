@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-
+// Route::get('s3', S3Controller::class, 'index');
 Route::controller(S3Controller::class)->group(function(){
     Route::get('s3', 'index');
 });
